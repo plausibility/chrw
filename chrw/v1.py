@@ -9,6 +9,7 @@ import logging
 import datetime
 import time
 import json
+import functools
 
 def rate_limited(max_per_second):
     """ Sort of based off of an answer about
@@ -34,7 +35,7 @@ def rate_limited(max_per_second):
             ret = func(*args, **kwargs)
             last_time_called[0] = datetime.datetime.now()
             return ret
-        return rate_limited_function
+        return functools.update_wrapper(rate_limited_function, func)
     return decorate
 
 class wrapper:

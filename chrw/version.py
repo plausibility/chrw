@@ -1,4 +1,4 @@
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # Just incase they don't have requests installed yet.
 codes = None
